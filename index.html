@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>MarammatBook — repair job tracking for mobile & electronics shops</title>
+  <meta name="description" content="Intake a repair job, move it received → diagnosing → awaiting-parts → repairing → ready → delivered, log parts & labour, set a warranty on delivery and WhatsApp the customer 'ready for pickup'. Built for Indian mobile & electronics repair shops — book a discovery call." />
+  <meta name="keywords" content="repair shop software, mobile repair job tracking, electronics repair CRM, repair job card app, warranty tracking, ready for pickup WhatsApp, repair shop India" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+  <link rel="canonical" href="https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/" />
+  <meta name="theme-color" content="#0d9488" />
+  <meta name="author" content="KARYA" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="KARYA" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:title" content="MarammatBook — repair job tracking for mobile & electronics shops" />
+  <meta property="og:description" content="Job intake → status → ready-for-pickup, with a warranty & parts log, for mobile and electronics repair shops. WhatsApp customers the moment their device is ready — book a discovery call." />
+  <meta property="og:url" content="https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/" />
+  <meta property="og:image" content="https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="MarammatBook — repair job intake, status board and ready-for-pickup with a warranty & parts log for mobile and electronics repair shops." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MarammatBook — repair job tracking for mobile & electronics shops" />
+  <meta name="twitter:description" content="Job intake → status → ready-for-pickup, with a warranty & parts log, for mobile and electronics repair shops. Book a discovery call." />
+  <meta name="twitter:image" content="https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/og.png" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/og.png" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://kaarya-bench.pages.dev/#org",
+        "name": "KARYA",
+        "url": "https://kaarya-bench.pages.dev/",
+        "email": "sreeni.nintendo@gmail.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/#website",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/",
+        "name": "MarammatBook",
+        "inLanguage": "en-IN",
+        "publisher": { "@id": "https://kaarya-bench.pages.dev/#org" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "MarammatBook",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/",
+        "image": "https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/og.png",
+        "description": "Repair job intake → status → ready-for-pickup for mobile and electronics repair shops. Log the device, IMEI/serial, reported fault and estimate; move each job through received, diagnosing, awaiting-parts, repairing, ready and delivered; record parts and labour; set a warranty-until on delivery; and WhatsApp the customer when the device is ready for pickup.",
+        "inLanguage": ["en-IN", "hi-IN"],
+        "areaServed": { "@type": "Country", "name": "India" },
+        "audience": { "@type": "BusinessAudience" },
+        "provider": { "@type": "Organization", "name": "KARYA" },
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "availability": "https://schema.org/InStock",
+          "description": "Subscription — pricing shared on a discovery call"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does it actually message the customer, or just remind me to?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MarammatBook drafts the 'ready for pickup' message — with the customer's name, device and job number — and stages it in your outbox the moment you mark a job ready. You send it from your own number with a tap, so it looks like it came from your shop, not a robot."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the warranty check work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When you deliver a repair you set a warranty-until date. Later, a customer walks in claiming the same fault came back — you search their phone number or IMEI and MarammatBook instantly shows whether that repair is still in warranty and what was done. No paper slips to dig for."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "My shop takes phones, laptops, TVs, mixers — anything. Does that fit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A job is just a device, an IMEI or serial, a reported fault and an estimate — so it works for any mobile or electronics repair. The status flow and parts-and-labour log are the same whether it's a screen replacement or a board-level repair."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "I'm not very techy. How long to get going?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can intake your first job in a minute — customer name, phone, device, fault, estimate. The status board and warranty lookup come pre-built. Most shops are running it the same afternoon they start."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does it cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first shops."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "KARYA · On the Bench",
+            "item": "https://kaarya-bench.pages.dev/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "MarammatBook",
+            "item": "https://sreenivas-sadhu-prabhakara.github.io/marammatbook-site/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="MarammatBook home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" role="img" aria-label="MarammatBook logo">
+            <rect x="3" y="4" width="26" height="24" rx="3" fill="#0d9488"/>
+            <rect x="3" y="4" width="7" height="24" rx="3" fill="#0a6d64"/>
+            <path d="M20.5 11.5l-2.6 2.6 2 2 2.6-2.6a3.4 3.4 0 0 1-4.6 4.3l-5 5a1.6 1.6 0 0 1-2.3-2.3l5-5a3.4 3.4 0 0 1 4.3-4.6z" fill="#F4F6F5"/>
+          </svg>
+        </span>
+        <span class="brand__name">Marammat<span class="brand__book">Book</span></span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#problem">The problem</a>
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#preview">Preview</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20MarammatBook" class="btn btn--sm">Book a discovery call</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Every job on one board</p>
+          <h1 class="hero__title" id="hero-title">From intake to<br /><span class="accent-word">ready for pickup.</span></h1>
+          <p class="hero__pain">
+            Devices pile up on the bench, customers keep calling "is it ready?",
+            and last month's warranty is a scribble in a diary you can't find.
+            MarammatBook runs every repair from job card to pickup — status,
+            parts, labour and warranty, all in one book.
+          </p>
+          <div class="hero__cta">
+            <a href="#pricing" class="btn btn--lg">Track your first job &rarr;</a>
+            <a href="#how" class="btn-link">See how it works</a>
+          </div>
+          <p class="hero__note"><span class="dot"></span>For mobile &amp; electronics repair shops · subscription · pricing on discovery</p>
+        </div>
+
+        <!-- SIGNATURE WIDGET: live job card -->
+        <aside class="register" aria-label="Live repair job card demo">
+          <div class="register__head">
+            <div>
+              <p class="register__label">Job card</p>
+              <p class="register__month" id="reg-job">#MB-2043 · iPhone 12</p>
+            </div>
+            <span class="register__pill">Live</span>
+          </div>
+          <ul class="register__rows" id="reg-rows">
+            <li class="reg-row" data-state="done">
+              <span class="reg-row__name">Received <em>· IMEI 3557…8842 · cracked screen</em></span>
+              <span class="reg-row__amt">Est Rs 4,800</span>
+              <span class="reg-row__tag tag--paid">Logged</span>
+            </li>
+            <li class="reg-row" data-state="active">
+              <span class="reg-row__name">In the shop <em>· display + digitiser</em></span>
+              <span class="reg-row__amt">Parts Rs 3,200</span>
+              <span class="reg-row__tag tag--due" id="reg-live-tag">Repairing</span>
+            </li>
+            <li class="reg-row" data-state="pending">
+              <span class="reg-row__name">Pickup <em>· warranty on delivery</em></span>
+              <span class="reg-row__amt">Total Rs 4,800</span>
+              <span class="reg-row__tag tag--over">Awaiting</span>
+            </li>
+          </ul>
+          <div class="register__foot">
+            <div class="regstat">
+              <span class="regstat__label">On the bench</span>
+              <span class="regstat__val regstat__val--in" id="reg-open">7 jobs</span>
+            </div>
+            <div class="regstat">
+              <span class="regstat__label">Ready for pickup</span>
+              <span class="regstat__val regstat__val--out" id="reg-ready">2 jobs</span>
+            </div>
+          </div>
+          <p class="register__caption" id="reg-caption">Mark it ready → a "your device is ready for pickup" message drafts itself.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROBLEM ============ -->
+    <section class="section" id="problem" aria-label="The problem">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">01 · The problem</p>
+        <div class="two-col">
+          <h2 class="section__title">You fix the devices.<br />The tracking breaks you.</h2>
+          <div class="prose">
+            <p>
+              If you run a repair counter in Karol Bagh or a mobile shop in Chennai,
+              nobody handed you a workshop management system. Your system is a
+              <strong>stack of devices, a paper job book, and your own memory</strong> —
+              and all three quietly fall apart on a busy day.
+            </p>
+          </div>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📞</span>
+            <h3>"Bhaiya, is my phone ready?"</h3>
+            <p>The same customer calls three times a day. You put the phone down, walk to the bench, check, walk back — for a job you haven't started yet. Every day, ten times over.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">📓</span>
+            <h3>The job book is a guessing game</h3>
+            <p>Which device is whose? What was the reported fault? What did you quote? It's all in a diary in your handwriting, and half the entries have no status at all.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">🔩</span>
+            <h3>Parts and labour never add up</h3>
+            <p>You put in a Rs 3,200 display and forgot to write it down. At pickup you're quoting from memory, eating the margin, or arguing over a number you can't back up.</p>
+          </div>
+          <div class="pain">
+            <span class="pain__i" aria-hidden="true">🛡️</span>
+            <h3>Warranty is "trust me"</h3>
+            <p>A customer says the fault came back within warranty. You have no record of when you delivered it or what you did — so you redo it for free, or lose a regular over an argument.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INSIGHT ============ -->
+    <section class="insight" id="insight" aria-label="The insight">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--light">02 · The insight</p>
+        <blockquote class="insight__quote">
+          A repair isn't a mystery — it's a <span class="hl">known pipeline</span>.
+          Every device moves through the same stages, yet the shop still tracks
+          each one <span class="hl">in its head</span>.
+        </blockquote>
+        <p class="insight__punch">
+          MarammatBook's whole job is to make that pipeline visible: intake the job
+          once, then <strong>move it received → diagnosing → awaiting-parts →
+          repairing → ready → delivered</strong> — so a glance at the board answers
+          "is it ready?" before the customer even asks, and a warranty is a lookup,
+          not an argument.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="section" id="how" aria-label="How it works">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">03 · How it works</p>
+        <h2 class="section__title">Intake once. Then just move it along.</h2>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">1</span>
+            <div>
+              <h3>Intake the job</h3>
+              <p>Customer, phone, device, IMEI or serial, the reported fault and your estimate. One short form and the job card is on the board — takes a minute at the counter.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">2</span>
+            <div>
+              <h3>Move it through the pipeline</h3>
+              <p>Received → diagnosing → awaiting-parts → repairing → ready → delivered. Advance the status with a tap; the board always shows exactly where every device is.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">3</span>
+            <div>
+              <h3>Log parts &amp; labour as you go</h3>
+              <p>Add each part with its cost and set the labour. MarammatBook totals the bill for you — no memory maths, no margin quietly leaking away.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step__n">4</span>
+            <div>
+              <h3>Ready → WhatsApp, deliver → warranty</h3>
+              <p>Mark it ready and a "come pick it up" message drafts itself. On delivery, set the warranty-until date — and every past repair becomes a searchable warranty record.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="section section--tint" id="features" aria-label="What's inside">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">04 · What's inside</p>
+        <h2 class="section__title">The whole workshop, on one board.</h2>
+
+        <div class="feat-grid">
+          <article class="feat">
+            <h3>One-minute job intake</h3>
+            <p>Customer, device, IMEI/serial, reported fault, estimate — captured once at the counter and turned into a job card on the board.</p>
+          </article>
+          <article class="feat">
+            <h3>Six-stage status pipeline</h3>
+            <p>Received, diagnosing, awaiting-parts, repairing, ready, delivered. Advance with a tap; every device's stage is visible at a glance.</p>
+          </article>
+          <article class="feat">
+            <h3>Parts &amp; labour log</h3>
+            <p>Add each part and its cost, set the labour, and the total bill computes itself. No more quoting from memory at pickup.</p>
+          </article>
+          <article class="feat">
+            <h3>Ready-for-pickup on WhatsApp</h3>
+            <p>Mark a job ready and a personalised pickup message stages in your outbox — send it from your own number with one tap.</p>
+          </article>
+          <article class="feat">
+            <h3>Warranty on delivery</h3>
+            <p>Set a warranty-until date when you hand the device back. Every delivered repair becomes a dated, searchable warranty record.</p>
+          </article>
+          <article class="feat">
+            <h3>Warranty lookup</h3>
+            <p>Search a phone number or IMEI and instantly see whether a past repair is still in warranty and exactly what was done to it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCT PREVIEW ============ -->
+    <section class="section" id="preview" aria-label="The dashboard">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">05 · The dashboard</p>
+        <h2 class="section__title">Open it in the morning. See every device at once.</h2>
+
+        <div class="screen" role="img" aria-label="MarammatBook dashboard preview showing 7 jobs on the bench, 2 ready for pickup, 1 awaiting parts and 84,000 rupees of revenue this month, with a jobs board of four devices across different statuses.">
+          <!-- browser chrome -->
+          <div class="screen__bar">
+            <span class="screen__dot"></span><span class="screen__dot"></span><span class="screen__dot"></span>
+            <span class="screen__url">app.marammatbook.in / Sharma Mobile Care</span>
+          </div>
+
+          <div class="screen__body">
+            <div class="screen__topline">
+              <div>
+                <p class="screen__hello">Namaste, Rohit ji</p>
+                <p class="screen__sub">Sharma Mobile Care · 10 jobs · July 2026</p>
+              </div>
+              <span class="screen__tag">Bench &middot; live</span>
+            </div>
+
+            <!-- KPI cards -->
+            <div class="kpis">
+              <div class="kpi kpi--in">
+                <p class="kpi__label">On the bench</p>
+                <p class="kpi__val">7</p>
+                <div class="kpi__bar"><span style="width:70%"></span></div>
+                <p class="kpi__meta">2 ready · 1 awaiting parts</p>
+              </div>
+              <div class="kpi kpi--out">
+                <p class="kpi__label">Awaiting parts</p>
+                <p class="kpi__val">1</p>
+                <div class="kpi__bar kpi__bar--out"><span style="width:14%"></span></div>
+                <p class="kpi__meta">Redmi 10 · display on order</p>
+              </div>
+              <div class="kpi kpi--flat">
+                <p class="kpi__label">Revenue this month</p>
+                <p class="kpi__val">Rs 84,000</p>
+                <p class="kpi__meta">from 22 delivered jobs</p>
+              </div>
+            </div>
+
+            <!-- jobs board -->
+            <div class="tablecard">
+              <div class="tablecard__head">
+                <p>Jobs board</p>
+                <span class="tablecard__hint">pickup message auto-staged</span>
+              </div>
+              <div class="tablescroll">
+                <table class="dtable">
+                  <thead>
+                    <tr>
+                      <th>Customer</th><th>Device</th><th class="num">Total</th><th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Anita Reddy</td><td>iPhone 12 · screen</td>
+                      <td class="num">4,800</td>
+                      <td><span class="s s--paid">Ready · msg staged</span></td>
+                    </tr>
+                    <tr>
+                      <td>Kabir Shah</td><td>Dell laptop · no boot</td>
+                      <td class="num">2,600</td>
+                      <td><span class="s s--due">Repairing</span></td>
+                    </tr>
+                    <tr>
+                      <td>Meena Pillai</td><td>Redmi 10 · display</td>
+                      <td class="num">3,100</td>
+                      <td><span class="s s--over">Awaiting parts</span></td>
+                    </tr>
+                    <tr>
+                      <td>Suresh Gupta</td><td>LED TV · panel</td>
+                      <td class="num">5,900</td>
+                      <td><span class="s s--paid">Delivered · warranty 90d</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="section section--tint" id="pricing" aria-label="Pricing">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">06 · Pricing</p>
+        <div class="price-wrap">
+          <div class="price-copy">
+            <h2 class="section__title">Simple subscription. However many jobs you take.</h2>
+            <p class="prose">
+              If MarammatBook saves you <strong>one warranty dispute a month</strong>
+              — or one job you'd otherwise have forgotten on the bench — it's already
+              paid for itself, and you've stopped answering "is it ready yet?" all day.
+            </p>
+            <ul class="price-includes">
+              <li>Unlimited jobs, customers &amp; parts</li>
+              <li>Six-stage status board + ready-for-pickup WhatsApp</li>
+              <li>Parts &amp; labour log with auto-totalled bill</li>
+              <li>Warranty-on-delivery + instant warranty lookup</li>
+            </ul>
+          </div>
+
+          <div class="price-card">
+            <p class="price-card__eyebrow">MarammatBook</p>
+            <p class="price-card__amt" style="font-size:34px;">Pricing — on discovery</p>
+            <p class="price-card__line">Subscription basis</p>
+            <p class="prose" style="color:color-mix(in srgb, var(--paper) 82%, transparent);margin:0 0 22px;">
+              We set pricing on a short discovery call and bill it as a simple monthly
+              subscription — sized to how your shop runs. Early shops get founder terms.
+            </p>
+            <a href="mailto:sreeni.nintendo@gmail.com?subject=Discovery%20call%20—%20MarammatBook" class="btn btn--lg btn--block">Book a discovery call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHO + FAQ ============ -->
+    <section class="section" id="faq" aria-label="Who it's for and frequently asked questions">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--rule">07 · Who it's for &amp; questions</p>
+        <div class="who-grid">
+          <div class="who">
+            <h2 class="section__title section__title--sm">Built for the repair counter, not the enterprise service centre.</h2>
+            <p class="prose">
+              MarammatBook is for the <strong>independent repair shop</strong> — a mobile
+              counter, a laptop-and-electronics workshop, a two-technician bench. Busy
+              enough that jobs get lost and "is it ready?" eats your day; small enough that
+              a heavyweight service-desk suite is overkill. If you're running it on a paper
+              job book right now, this is for you.
+            </p>
+            <div class="who-tags">
+              <span>Mobile repair shops</span>
+              <span>Laptop &amp; PC repair</span>
+              <span>Electronics &amp; appliance</span>
+              <span>1–4 technicians</span>
+            </div>
+          </div>
+
+          <div class="faq">
+            <details open>
+              <summary>Does it actually message the customer, or just remind me to?</summary>
+              <p>MarammatBook drafts the "ready for pickup" message — with the customer's name, device and job number — and stages it in your outbox the moment you mark a job ready. You send it from your own number with a tap, so it looks like it came from your shop, not a robot.</p>
+            </details>
+            <details>
+              <summary>How does the warranty check work?</summary>
+              <p>When you deliver a repair you set a warranty-until date. Later, a customer walks in claiming the same fault came back — you search their phone number or IMEI and MarammatBook instantly shows whether that repair is still in warranty and what was done. No paper slips to dig for.</p>
+            </details>
+            <details>
+              <summary>My shop takes phones, laptops, TVs, mixers — anything. Does that fit?</summary>
+              <p>Yes. A job is just a device, an IMEI or serial, a reported fault and an estimate — so it works for any mobile or electronics repair. The status flow and parts-and-labour log are the same whether it's a screen replacement or a board-level repair.</p>
+            </details>
+            <details>
+              <summary>I'm not very techy. How long to get going?</summary>
+              <p>You can intake your first job in a minute — customer name, phone, device, fault, estimate. The status board and warranty lookup come pre-built. Most shops are running it the same afternoon they start.</p>
+            </details>
+            <details>
+              <summary>What does it cost?</summary>
+              <p>Pricing is worked out on a quick discovery call and billed monthly on subscription. We're keeping public prices off the page while we onboard our first shops.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <span class="brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="24" height="24" role="img" aria-label="MarammatBook logo">
+              <rect x="3" y="4" width="26" height="24" rx="3" fill="#0d9488"/>
+              <rect x="3" y="4" width="7" height="24" rx="3" fill="#0a6d64"/>
+              <path d="M20.5 11.5l-2.6 2.6 2 2 2.6-2.6a3.4 3.4 0 0 1-4.6 4.3l-5 5a1.6 1.6 0 0 1-2.3-2.3l5-5a3.4 3.4 0 0 1 4.3-4.6z" fill="#F4F6F5"/>
+            </svg>
+          </span>
+          <span class="brand__name">Marammat<span class="brand__book">Book</span></span>
+        </span>
+        <p class="footer__tag">From intake to ready for pickup.</p>
+      </div>
+      <div class="footer__meta">
+        <p class="footer__studio">A <strong>KARYA</strong> studio build</p>
+        <a class="footer__mail" href="mailto:sreeni.nintendo@gmail.com">sreeni.nintendo@gmail.com</a>
+        <p class="footer__fine">© 2026 MarammatBook · Made in India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
